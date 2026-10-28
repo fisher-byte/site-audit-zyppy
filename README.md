@@ -1,31 +1,42 @@
-# 网站 SEO / GEO 自检
+# 网站 SEO / GEO 检查
 
-对着公开网页做检查，看页面本身有没有明显缺口。覆盖搜索和 AI 搜索都会看的部分：标题、规范链接、HTTPS、robots、站点地图、结构化数据、图片说明、联系入口、AI 爬虫能不能进来、llms.txt。
+这里有三样东西，从「该看什么」到「上线前拦住」再到「对着线上抓一遍」。
 
-外链、品牌搜索量和用户行为不在这里，那些要另外接搜索后台。
+## 要素清单
 
-## 怎么用
+[网站 SEO 要素检查](docs/网站SEO要素检查.md) 写的是人要过的项目：能不能被抓取、标题和描述、规范链接、站点地图、结构化数据、分享信息、多语言、内链和 404。后半部分是这些地方最常出的问题，以及该怎么核对。
 
-1. 安装 Python 3。
-2. 安装依赖：`pip install -r requirements.txt`
-3. 复制 `sites.example.txt`，改成要检查的域名。
-4. 运行：
+## 自动检查门禁
+
+[SEO自动检查门禁](SEO自动检查门禁/README.md) 按一份配置检查代表页、站点地图、链接、结构化数据和线上抓取是否一致。适合放进上线流程：部署前跑本地，部署后再跑线上。
 
 ```bash
-python3 scripts/audit.py sites.example.txt results
+cd SEO自动检查门禁
+pnpm install
+pnpm run seo:audit -- --config examples/seo-gate.config.json
 ```
 
-每个站会得到一份 JSON。`issues` 里是发现的问题，严重程度分为 critical、high、medium、low。
+示例配置里的域名是 `example.com`。换成自己的站再跑。检查项见 [检查项清单](SEO自动检查门禁/docs/检查项清单.md)。
 
-如果有些词不该出现在公开页面上，按 `jargon.example.txt` 的格式另写一份，检查时带上：
+## 网页自检
+
+`scripts/audit.py` 对着公开网址抓一遍，看首页、收录开关、站点地图、RSS、llms.txt、AI 爬虫和抽样正文。看哪些在查、哪些查不了：[检查清单](docs/检查清单.md)。
+
+```bash
+pip install -r requirements.txt
+python3 scripts/audit.py sites.example.txt results
+python3 scripts/build_report.py results report
+```
+
+`sites.example.txt` 一行一个域名。报告在 `report/report.md` 和 `report/report.html`。
+
+已经用 `example.com` 和 `www.iana.org` 跑过一版，可以直接看 [示例报告](examples/report.md)。用浏览器打开 [examples/report.html](examples/report.html) 是同一份的页面版。
+
+如果有些词不该出现在公开页上，按 `jargon.example.txt` 另写一份：
 
 ```bash
 python3 scripts/audit.py sites.example.txt results jargon.example.txt
 ```
-
-不传词表时，只检查页面上有没有露出 localhost 和 127.0.0.1。
-
-检查结果写在本机的 `results/` 里，不会随这个仓库一起发布。
 
 ## 许可
 

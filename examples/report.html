@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>网站 SEO / GEO 自检示例报告</title>
+<style>
+:root { --bg:#f4f6f8; --card:#fff; --line:#e4e7ec; --tx:#1a1f2c; --sub:#667085;
+--r:#d92d20; --o:#f79009; --g:#12b76a; --b:#2e90fa; }
+* { box-sizing:border-box; margin:0; }
+body { font:15px/1.65 -apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
+background:var(--bg); color:var(--tx); padding:32px 20px; }
+.wrap { max-width:1080px; margin:auto; }
+h1 { font-size:28px; letter-spacing:-0.03em; }
+h2 { font-size:18px; margin:36px 0 12px; }
+.sub { color:var(--sub); margin:8px 0 20px; }
+.stats { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+.stat,.card,table { background:var(--card); border:1px solid var(--line); border-radius:12px; }
+.stat { padding:14px 16px; }
+.stat b { display:block; font-size:26px; }
+.stat span,.hint { color:var(--sub); font-size:12px; }
+table { width:100%; border-collapse:collapse; overflow:hidden; }
+th,td { padding:10px 12px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
+th { background:#eef1f5; font-size:12px; color:#475467; }
+.score { display:inline-block; min-width:36px; text-align:center; color:#fff; font-weight:700;
+border-radius:6px; padding:2px 6px; }
+.score.g { background:var(--g); } .score.y { background:#ca9a04; }
+.score.o { background:var(--o); } .score.r { background:var(--r); }
+.tag { display:inline-block; border-radius:4px; padding:1px 7px; color:#fff; font-size:11px; font-weight:700; }
+.tag.critical { background:var(--r); } .tag.high { background:var(--o); }
+.tag.medium { background:#ca9a04; } .tag.low { background:#98a2b3; }
+.grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.card { padding:16px; }
+.card header { display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; }
+.card p,.card li { font-size:13px; }
+.card ul { list-style:none; padding:0; margin-top:10px; }
+.card li { margin:6px 0; }
+.note { background:#eef4ff; border:1px solid #b2ddff; border-radius:12px; padding:14px 16px; }
+footer { color:var(--sub); font-size:12px; margin-top:28px; }
+@media (max-width:800px) { .stats,.grid { grid-template-columns:1fr; } }
+</style></head><body><div class="wrap">
+<h1>网站 SEO / GEO 自检示例</h1>
+<p class="sub">用公开示例站跑出来的结果，用来看一份报告长什么样。健康分只按这次自动检查扣分，不是搜索排名预测。生成日期 2026-10-28。</p>
+<div class="stats"><div class='stat'><b>0</b><span>严重</span></div><div class='stat'><b>6</b><span>高</span></div><div class='stat'><b>14</b><span>中</span></div><div class='stat'><b>8</b><span>低</span></div></div>
+<h2>总览</h2>
+<table><thead><tr><th>站点</th><th>健康分</th><th>首页速度</th><th>标题</th><th>问题（严重/高/中/低）</th><th>站点地图</th><th>RSS</th><th>llms.txt</th></tr></thead>
+<tbody><tr><td><b>example.com</b></td><td><span class='score r'>0</span></td><td>106 ms</td><td>Example Domain</td><td>0/4/8/5</td><td>404</td><td>没有</td><td>404</td></tr><tr><td><b>www.iana.org</b></td><td><span class='score r'>34</span></td><td>125 ms</td><td>Internet Assigned Numbers Authority</td><td>0/2/6/3</td><td>404</td><td>没有</td><td>404</td></tr></tbody></table>
+<h2>问题清单</h2>
+<table><thead><tr><th>级别</th><th>站点</th><th>问题</th><th>对应的公开因素</th></tr></thead>
+<tbody><tr><td><span class='tag medium'>中</span></td><td>example.com</td><td>缺少 HSTS 响应头</td><td class='hint'>HTTPS +1.28</td></tr><tr><td><span class='tag low'>低</span></td><td>example.com</td><td>缺少 X-Content-Type-Options</td><td class='hint'></td></tr><tr><td><span class='tag low'>低</span></td><td>example.com</td><td>缺少 X-Frame-Options / frame-ancestors</td><td class='hint'></td></tr><tr><td><span class='tag medium'>中</span></td><td>example.com</td><td>首页缺 meta description</td><td class='hint'>Meta Description +0.22</td></tr><tr><td><span class='tag high'>高</span></td><td>example.com</td><td>首页缺 H1</td><td class='hint'>H1 Keywords +1.67</td></tr><tr><td><span class='tag medium'>中</span></td><td>example.com</td><td>首页缺 canonical</td><td class='hint'>Canonicalization +1.56</td></tr><tr><td><span class='tag high'>高</span></td><td>example.com</td><td>首页可见文本仅 145 字符 — 可能依赖 JS 渲染</td><td class='hint'>Client-side JS -1.04</td></tr><tr><td><span class='tag medium'>中</span></td><td>example.com</td><td>首页无 mailto 联系方式</td><td class='hint'>Contact Info +1.09</td></tr><tr><td><span class='tag low'>低</span></td><td>example.com</td><td>首页未发现搜索表单</td><td class='hint'></td></tr><tr><td><span class='tag low'>低</span></td><td>example.com</td><td>缺 og:image</td><td class='hint'></td></tr><tr><td><span class='tag medium'>中</span></td><td>example.com</td><td>首页无 JSON-LD 结构化数据</td><td class='hint'>Structured Data +0.96</td></tr><tr><td><span class='tag medium'>中</span></td><td>example.com</td><td>robots.txt 不可用 (404)</td><td class='hint'>robots -2.22</td></tr><tr><td><span class='tag high'>高</span></td><td>example.com</td><td>Sitemap 不可用: https://example.com/sitemap.xml (404)</td><td class='hint'>Sitemap +0.80</td></tr><tr><td><span class='tag low'>低</span></td><td>example.com</td><td>无 llms.txt</td><td class='hint'>llms.txt +0.05 (低权重)</td></tr><tr><td><span class='tag medium'>中</span></td><td>example.com</td><td>未发现可用 RSS feed</td><td class='hint'></td></tr><tr><td><span class='tag high'>高</span></td><td>example.com</td><td>首页与 Sitemap 均未发现文章页链接</td><td class='hint'>Content</td></tr><tr><td><span class='tag medium'>中</span></td><td>example.com</td><td>未发现 About/联系页面</td><td class='hint'>Trust +2.01</td></tr><tr><td><span class='tag medium'>中</span></td><td>www.iana.org</td><td>首页缺 meta description</td><td class='hint'>Meta Description +0.22</td></tr><tr><td><span class='tag medium'>中</span></td><td>www.iana.org</td><td>首页无 mailto 联系方式</td><td class='hint'>Contact Info +1.09</td></tr><tr><td><span class='tag low'>低</span></td><td>www.iana.org</td><td>首页未发现搜索表单</td><td class='hint'></td></tr><tr><td><span class='tag low'>低</span></td><td>www.iana.org</td><td>缺 og:image</td><td class='hint'></td></tr><tr><td><span class='tag medium'>中</span></td><td>www.iana.org</td><td>首页无 JSON-LD 结构化数据</td><td class='hint'>Structured Data +0.96</td></tr><tr><td><span class='tag medium'>中</span></td><td>www.iana.org</td><td>robots.txt 未声明 Sitemap</td><td class='hint'></td></tr><tr><td><span class='tag high'>高</span></td><td>www.iana.org</td><td>Sitemap 不可用: https://www.iana.org/sitemap.xml (404)</td><td class='hint'>Sitemap +0.80</td></tr><tr><td><span class='tag low'>低</span></td><td>www.iana.org</td><td>无 llms.txt</td><td class='hint'>llms.txt +0.05 (低权重)</td></tr><tr><td><span class='tag medium'>中</span></td><td>www.iana.org</td><td>未发现可用 RSS feed</td><td class='hint'></td></tr><tr><td><span class='tag high'>高</span></td><td>www.iana.org</td><td>首页与 Sitemap 均未发现文章页链接</td><td class='hint'>Content</td></tr><tr><td><span class='tag medium'>中</span></td><td>www.iana.org</td><td>/archive?page=2 未 noindex — 分页页可能产生重复收录</td><td class='hint'>Duplicate -1.19</td></tr></tbody></table>
+<h2>分站</h2>
+<div class="grid"><article class='card'><header><h3>example.com</h3><span class='score r'>0</span></header><p>标题：Example Domain<br>H1：（没有 H1）<br>规范链接：（没有）<br>结构化数据：（没有）<br>文章样本 0 篇 · 关于页 （没找到） · 404 状态 404<br>AI 爬虫被明确拦住 0 / 0</p><ul><li><span class='tag medium'>中</span> 缺少 HSTS 响应头</li><li><span class='tag low'>低</span> 缺少 X-Content-Type-Options</li><li><span class='tag low'>低</span> 缺少 X-Frame-Options / frame-ancestors</li><li><span class='tag medium'>中</span> 首页缺 meta description</li><li><span class='tag high'>高</span> 首页缺 H1</li><li><span class='tag medium'>中</span> 首页缺 canonical</li><li><span class='tag high'>高</span> 首页可见文本仅 145 字符 — 可能依赖 JS 渲染</li><li><span class='tag medium'>中</span> 首页无 mailto 联系方式</li><li><span class='tag low'>低</span> 首页未发现搜索表单</li><li><span class='tag low'>低</span> 缺 og:image</li><li><span class='tag medium'>中</span> 首页无 JSON-LD 结构化数据</li><li><span class='tag medium'>中</span> robots.txt 不可用 (404)</li><li><span class='tag high'>高</span> Sitemap 不可用: https://example.com/sitemap.xml (404)</li><li><span class='tag low'>低</span> 无 llms.txt</li><li><span class='tag medium'>中</span> 未发现可用 RSS feed</li><li><span class='tag high'>高</span> 首页与 Sitemap 均未发现文章页链接</li><li><span class='tag medium'>中</span> 未发现 About/联系页面</li></ul></article><article class='card'><header><h3>www.iana.org</h3><span class='score r'>34</span></header><p>标题：Internet Assigned Numbers Authority<br>H1：Internet Assigned Numbers Authority<br>规范链接：https://iana.org/<br>结构化数据：（没有）<br>文章样本 0 篇 · 关于页 /about · 404 状态 404<br>AI 爬虫被明确拦住 0 / 17</p><ul><li><span class='tag medium'>中</span> 首页缺 meta description</li><li><span class='tag medium'>中</span> 首页无 mailto 联系方式</li><li><span class='tag low'>低</span> 首页未发现搜索表单</li><li><span class='tag low'>低</span> 缺 og:image</li><li><span class='tag medium'>中</span> 首页无 JSON-LD 结构化数据</li><li><span class='tag medium'>中</span> robots.txt 未声明 Sitemap</li><li><span class='tag high'>高</span> Sitemap 不可用: https://www.iana.org/sitemap.xml (404)</li><li><span class='tag low'>低</span> 无 llms.txt</li><li><span class='tag medium'>中</span> 未发现可用 RSS feed</li><li><span class='tag high'>高</span> 首页与 Sitemap 均未发现文章页链接</li><li><span class='tag medium'>中</span> /archive?page=2 未 noindex — 分页页可能产生重复收录</li></ul></article></div>
+<h2>这份报告没有覆盖的事</h2>
+<div class="note">外链质量、品牌被搜索的次数、用户是否满意，都要另外接搜索后台。只看网页，判断不了这些。</div>
+<footer>由 scripts/audit.py 抓取，scripts/build_report.py 生成。</footer>
+</div></body></html>

@@ -1,0 +1,191 @@
+{
+  "name": "example.com",
+  "domain": "example.com",
+  "fetched_at": "2026-10-28 19:24:35",
+  "issues": [
+    {
+      "severity": "medium",
+      "category": "security",
+      "detail": "缺少 HSTS 响应头",
+      "zyppy": "HTTPS +1.28"
+    },
+    {
+      "severity": "low",
+      "category": "security",
+      "detail": "缺少 X-Content-Type-Options",
+      "zyppy": ""
+    },
+    {
+      "severity": "low",
+      "category": "security",
+      "detail": "缺少 X-Frame-Options / frame-ancestors",
+      "zyppy": ""
+    },
+    {
+      "severity": "medium",
+      "category": "onpage",
+      "detail": "首页缺 meta description",
+      "zyppy": "Meta Description +0.22"
+    },
+    {
+      "severity": "high",
+      "category": "onpage",
+      "detail": "首页缺 H1",
+      "zyppy": "H1 Keywords +1.67"
+    },
+    {
+      "severity": "medium",
+      "category": "technical",
+      "detail": "首页缺 canonical",
+      "zyppy": "Canonicalization +1.56"
+    },
+    {
+      "severity": "high",
+      "category": "technical",
+      "detail": "首页可见文本仅 145 字符 — 可能依赖 JS 渲染",
+      "zyppy": "Client-side JS -1.04"
+    },
+    {
+      "severity": "medium",
+      "category": "brand",
+      "detail": "首页无 mailto 联系方式",
+      "zyppy": "Contact Info +1.09"
+    },
+    {
+      "severity": "low",
+      "category": "ux",
+      "detail": "首页未发现搜索表单",
+      "zyppy": ""
+    },
+    {
+      "severity": "low",
+      "category": "social",
+      "detail": "缺 og:image",
+      "zyppy": ""
+    },
+    {
+      "severity": "medium",
+      "category": "schema",
+      "detail": "首页无 JSON-LD 结构化数据",
+      "zyppy": "Structured Data +0.96"
+    },
+    {
+      "severity": "medium",
+      "category": "technical",
+      "detail": "robots.txt 不可用 (404)",
+      "zyppy": "robots -2.22"
+    },
+    {
+      "severity": "high",
+      "category": "technical",
+      "detail": "Sitemap 不可用: https://example.com/sitemap.xml (404)",
+      "zyppy": "Sitemap +0.80"
+    },
+    {
+      "severity": "low",
+      "category": "geo",
+      "detail": "无 llms.txt",
+      "zyppy": "llms.txt +0.05 (低权重)"
+    },
+    {
+      "severity": "medium",
+      "category": "distribution",
+      "detail": "未发现可用 RSS feed",
+      "zyppy": ""
+    },
+    {
+      "severity": "high",
+      "category": "structure",
+      "detail": "首页与 Sitemap 均未发现文章页链接",
+      "zyppy": "Content"
+    },
+    {
+      "severity": "medium",
+      "category": "brand",
+      "detail": "未发现 About/联系页面",
+      "zyppy": "Trust +2.01"
+    }
+  ],
+  "pages": {
+    "home": {
+      "status": 200,
+      "elapsed_ms": 106,
+      "final_url": "https://example.com/",
+      "error": null,
+      "title": "Example Domain",
+      "meta_description": "",
+      "meta_robots": "",
+      "canonical": "",
+      "viewport": true,
+      "html_lang": "en",
+      "hreflang": [],
+      "h1": [],
+      "h1_count": 0,
+      "h2_count": 0,
+      "h3_count": 0,
+      "jsonld_types": [],
+      "img_total": 0,
+      "img_missing_alt": 0,
+      "internal_links": 0,
+      "external_links": 0,
+      "external_hosts": [],
+      "article_link_candidates": [],
+      "og": {},
+      "favicon": true,
+      "rss_candidates": [],
+      "word_count": 145,
+      "raw_html_leaks": [],
+      "internal_jargon": [],
+      "has_mailto": false,
+      "has_search_form": false,
+      "ssr_ok": false,
+      "nosnippet": false,
+      "author_meta": false,
+      "has_faq_schema": false,
+      "time_elements": 0
+    }
+  },
+  "checks": {
+    "http_to_https": {
+      "status": 200,
+      "final": "http://example.com/",
+      "history": []
+    },
+    "www_redirect": {
+      "status": 200,
+      "final": "https://www.example.com/",
+      "history": []
+    },
+    "security_headers": {
+      "strict-transport-security": null,
+      "content-security-policy": null,
+      "x-content-type-options": null,
+      "x-frame-options": null,
+      "referrer-policy": null,
+      "permissions-policy": null
+    },
+    "indexing": "index-ok",
+    "home_jsonld": [],
+    "robots": {
+      "status": 404
+    },
+    "sitemap": {
+      "status": 404,
+      "url": "https://example.com/sitemap.xml"
+    },
+    "llms_txt": {
+      "status": 404,
+      "bytes": 577
+    },
+    "rss": {
+      "ok": false,
+      "url": null
+    },
+    "article_samples": [],
+    "articles_found": 0,
+    "404": {
+      "status": 404,
+      "branded": true
+    }
+  }
+}

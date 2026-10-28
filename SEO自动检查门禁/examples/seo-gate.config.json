@@ -1,0 +1,63 @@
+{
+  "site": {
+    "publicBaseUrl": "https://example.com",
+    "productionBaseUrl": "https://example.com",
+    "hostRedirects": [
+      {
+        "url": "http://example.com/",
+        "expectedLocationPattern": "^https://example\\.com/?$"
+      }
+    ]
+  },
+  "cache": {
+    "enabled": true,
+    "dir": ".seo-gate-cache",
+    "ttlHours": 24,
+    "cacheFailures": false
+  },
+  "sitemaps": {
+    "indexPath": "/sitemap.xml",
+    "deepAudit": "sample",
+    "deepAuditSampleSize": 20,
+    "requireCanonicalSelf": true,
+    "requireIndexable": true,
+    "forbiddenUrlPatterns": ["\\?", "/search"]
+  },
+  "pageRules": {
+    "titleMinLength": 10,
+    "descriptionMinLength": 40,
+    "requireCanonical": true,
+    "requireSelfCanonical": true,
+    "requireH1": true,
+    "requireOpenGraph": true,
+    "requireTwitterCard": "summary_large_image",
+    "requireJsonLd": true,
+    "requireImageAlt": true,
+    "requireViewport": true,
+    "requireHtmlLang": true,
+    "minInternalLinks": 1
+  },
+  "links": {
+    "internalMode": "sample",
+    "externalMode": "off",
+    "requireNoopenerForBlank": true,
+    "sponsoredPatterns": ["utm_medium=sponsor", "/go/"]
+  },
+  "assets": {
+    "robotsPath": "/robots.txt",
+    "robotsMustContain": ["Sitemap:"],
+    "llmsPath": "/llms.txt"
+  },
+  "specialPages": {
+    "statusPages": [
+      {
+        "path": "/this-page-does-not-exist",
+        "expectedStatus": 404,
+        "requireNoindex": true
+      }
+    ]
+  },
+  "reporting": {
+    "jsonOutputPath": "examples/seo-gate-report.json"
+  }
+}

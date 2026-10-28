@@ -1,0 +1,28 @@
+{
+  "name": "seo-gate-toolkit",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Config-driven SEO verification and production audit toolkit.",
+  "scripts": {
+    "seo:verify": "tsx src/verify.ts",
+    "seo:audit": "tsx src/audit-production.ts",
+    "seo:audit:fresh": "tsx src/audit-production.ts --fresh",
+    "seo:cache:clear": "tsx src/cache-clear.ts",
+    "seo:links": "tsx src/links-check.ts",
+    "seo:indexnow": "tsx src/indexnow.ts",
+    "seo:all": "tsx src/all.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "jsdom": "^29.0.1"
+  },
+  "devDependencies": {
+    "@types/jsdom": "^28.0.1",
+    "@types/node": "^20.19.0",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
