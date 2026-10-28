@@ -1,6 +1,6 @@
 # 网站 SEO / GEO 检查
 
-先看 [Zyppy 2026 的 101 项](docs/zyppy-2026-101.md)。这是检查用的因素表：自然搜索 88 项加 Google AI 13 项，分数来自 [2026 专家调查](https://signal.zyppy.com/p/google-ranking-factors-expert-survey)。技术项是门槛；意图匹配、高信任外链、原创研究、全站质量、品牌搜索、主题权威要靠内容和站外声誉。
+先看 [Zyppy 2026 的 101 项](docs/zyppy-2026-101.md)。因素名和专家分对齐 [2026 专家调查](https://signal.zyppy.com/p/google-ranking-factors-expert-survey)：自然搜索八组，加上 Google AI 13 项。技术项是门槛；意图匹配、高信任外链、原创研究、全站质量、品牌搜索、主题权威要靠内容和站外声誉。
 
 下面三样是拿这张表去核对的办法。
 

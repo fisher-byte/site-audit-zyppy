@@ -1,7 +1,7 @@
 {
   "name": "example.com",
   "domain": "example.com",
-  "fetched_at": "2026-10-28 19:24:35",
+  "fetched_at": "2026-10-28 19:32:21",
   "issues": [
     {
       "severity": "medium",
@@ -31,25 +31,25 @@
       "severity": "high",
       "category": "onpage",
       "detail": "首页缺 H1",
-      "zyppy": "H1 Keywords +1.67"
+      "zyppy": "Keywords in H1 +1.67"
     },
     {
       "severity": "medium",
       "category": "technical",
       "detail": "首页缺 canonical",
-      "zyppy": "Canonicalization +1.56"
+      "zyppy": "Correct Canonicalization +1.56"
     },
     {
       "severity": "high",
       "category": "technical",
       "detail": "首页可见文本仅 145 字符 — 可能依赖 JS 渲染",
-      "zyppy": "Client-side JS -1.04"
+      "zyppy": "Content Requires Client-Side JavaScript -1.04"
     },
     {
       "severity": "medium",
       "category": "brand",
       "detail": "首页无 mailto 联系方式",
-      "zyppy": "Contact Info +1.09"
+      "zyppy": "Visible Contact Information +1.09"
     },
     {
       "severity": "low",
@@ -73,19 +73,19 @@
       "severity": "medium",
       "category": "technical",
       "detail": "robots.txt 不可用 (404)",
-      "zyppy": "robots -2.22"
+      "zyppy": ""
     },
     {
       "severity": "high",
       "category": "technical",
       "detail": "Sitemap 不可用: https://example.com/sitemap.xml (404)",
-      "zyppy": "Sitemap +0.80"
+      "zyppy": "URL Included in XML Sitemap +0.80"
     },
     {
       "severity": "low",
       "category": "geo",
       "detail": "无 llms.txt",
-      "zyppy": "llms.txt +0.05 (低权重)"
+      "zyppy": "llms.txt File +0.05"
     },
     {
       "severity": "medium",
@@ -103,13 +103,13 @@
       "severity": "medium",
       "category": "brand",
       "detail": "未发现 About/联系页面",
-      "zyppy": "Trust +2.01"
+      "zyppy": ""
     }
   ],
   "pages": {
     "home": {
       "status": 200,
-      "elapsed_ms": 106,
+      "elapsed_ms": 94,
       "final_url": "https://example.com/",
       "error": null,
       "title": "Example Domain",

@@ -1,7 +1,7 @@
 {
   "name": "www.iana.org",
   "domain": "www.iana.org",
-  "fetched_at": "2026-10-28 19:24:35",
+  "fetched_at": "2026-10-28 19:32:21",
   "issues": [
     {
       "severity": "medium",
@@ -13,7 +13,7 @@
       "severity": "medium",
       "category": "brand",
       "detail": "首页无 mailto 联系方式",
-      "zyppy": "Contact Info +1.09"
+      "zyppy": "Visible Contact Information +1.09"
     },
     {
       "severity": "low",
@@ -43,13 +43,13 @@
       "severity": "high",
       "category": "technical",
       "detail": "Sitemap 不可用: https://www.iana.org/sitemap.xml (404)",
-      "zyppy": "Sitemap +0.80"
+      "zyppy": "URL Included in XML Sitemap +0.80"
     },
     {
       "severity": "low",
       "category": "geo",
       "detail": "无 llms.txt",
-      "zyppy": "llms.txt +0.05 (低权重)"
+      "zyppy": "llms.txt File +0.05"
     },
     {
       "severity": "medium",
@@ -67,13 +67,13 @@
       "severity": "medium",
       "category": "indexing",
       "detail": "/archive?page=2 未 noindex — 分页页可能产生重复收录",
-      "zyppy": "Duplicate -1.19"
+      "zyppy": "Duplicate Content -1.19"
     }
   ],
   "pages": {
     "home": {
       "status": 200,
-      "elapsed_ms": 125,
+      "elapsed_ms": 127,
       "final_url": "https://www.iana.org/",
       "error": null,
       "title": "Internet Assigned Numbers Authority",

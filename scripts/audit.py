@@ -265,11 +265,11 @@ def audit_site(name, domain):
     if not info["meta_description"]:
         issue("medium", "onpage", "首页缺 meta description", "Meta Description +0.22")
     if info["h1_count"] == 0:
-        issue("high", "onpage", "首页缺 H1", "H1 Keywords +1.67")
+        issue("high", "onpage", "首页缺 H1", "Keywords in H1 +1.67")
     elif info["h1_count"] > 1:
-        issue("medium", "onpage", f"首页有 {info['h1_count']} 个 H1", "H1 Keywords +1.67")
+        issue("medium", "onpage", f"首页有 {info['h1_count']} 个 H1", "Keywords in H1 +1.67")
     if not info["canonical"]:
-        issue("medium", "technical", "首页缺 canonical", "Canonicalization +1.56")
+        issue("medium", "technical", "首页缺 canonical", "Correct Canonicalization +1.56")
     if "noindex" in info["meta_robots"]:
         res["checks"]["indexing"] = "noindex-on-home"
         issue("critical", "indexing", "首页 meta robots 为 noindex — 全站不可收录", "Technical")
@@ -278,15 +278,15 @@ def audit_site(name, domain):
     if not info["viewport"]:
         issue("high", "ux", "缺 viewport — 移动端不可用", "Mobile Usability +1.66")
     if not info["ssr_ok"]:
-        issue("high", "technical", f"首页可见文本仅 {info['word_count']} 字符 — 可能依赖 JS 渲染", "Client-side JS -1.04")
+        issue("high", "technical", f"首页可见文本仅 {info['word_count']} 字符 — 可能依赖 JS 渲染", "Content Requires Client-Side JavaScript -1.04")
     if info["img_total"] and info["img_missing_alt"] / max(info["img_total"], 1) > 0.3:
-        issue("medium", "images", f"首页 {info['img_missing_alt']}/{info['img_total']} 图片缺 alt", "Image Alt +0.77")
+        issue("medium", "images", f"首页 {info['img_missing_alt']}/{info['img_total']} 图片缺 alt", "Image Alt Tags +0.77")
     if info["raw_html_leaks"]:
         issue("high", "content", f"首页可见文本出现原始 HTML 残留: {info['raw_html_leaks']}", "Content Quality")
     if info["internal_jargon"]:
         issue("high", "brand", f"公开页出现不该露出的词: {info['internal_jargon']}", "Trust")
     if not info["has_mailto"]:
-        issue("medium", "brand", "首页无 mailto 联系方式", "Contact Info +1.09")
+        issue("medium", "brand", "首页无 mailto 联系方式", "Visible Contact Information +1.09")
     if not info["has_search_form"]:
         issue("low", "ux", "首页未发现搜索表单")
     if "og:image" not in info["og"]:
@@ -298,17 +298,17 @@ def audit_site(name, domain):
     # --- robots.txt ---
     rb = fetch(base + "/robots.txt")
     if not rb.get("ok") or rb.get("status", 0) != 200:
-        issue("medium", "technical", f"robots.txt 不可用 ({rb.get('status')})", "robots -2.22")
+        issue("medium", "technical", f"robots.txt 不可用 ({rb.get('status')})")
         res["checks"]["robots"] = {"status": rb.get("status")}
     else:
         parsed = parse_robots(rb["text"])
         res["checks"]["robots"] = {"status": 200, **parsed}
         if parsed["disallow_all_wildcard"]:
-            issue("critical", "indexing", "robots.txt 对所有 UA Disallow: /", "robots -2.22")
+            issue("critical", "indexing", "robots.txt 对所有 UA Disallow: /", "Blocked by robots.txt -2.22")
         blocked_key = [b for b, v in parsed["ai_crawlers"].items() if v == "blocked"]
         if blocked_key:
             issue("medium", "geo", f"robots.txt 屏蔽 AI 爬虫: {blocked_key}",
-                  "AI Crawl Access +2.20")
+                  "AI Crawl Access & Snippet Eligibility +2.20")
         if not parsed["sitemaps"]:
             issue("medium", "technical", "robots.txt 未声明 Sitemap")
 
@@ -321,7 +321,7 @@ def audit_site(name, domain):
     sm = fetch(sm_url)
     sitemap_urls = []
     if not sm.get("ok") or sm.get("status", 0) != 200 or "<" not in sm.get("text", ""):
-        issue("high", "technical", f"Sitemap 不可用: {sm_url} ({sm.get('status')})", "Sitemap +0.80")
+        issue("high", "technical", f"Sitemap 不可用: {sm_url} ({sm.get('status')})", "URL Included in XML Sitemap +0.80")
         res["checks"]["sitemap"] = {"status": sm.get("status"), "url": sm_url}
     else:
         text = sm["text"]
@@ -355,7 +355,7 @@ def audit_site(name, domain):
     res["checks"]["llms_txt"] = {"status": llms.get("status"),
                                  "bytes": len(llms.get("text", ""))}
     if llms.get("status") != 200:
-        issue("low", "geo", "无 llms.txt", "llms.txt +0.05 (低权重)")
+        issue("low", "geo", "无 llms.txt", "llms.txt File +0.05")
 
     # --- RSS ---
     rss_ok, rss_url = False, None
@@ -430,7 +430,7 @@ def audit_site(name, domain):
                                 "canonical": ai2["canonical"]}
                 if "noindex" not in ai2["meta_robots"]:
                     issue("medium", "indexing",
-                          f"{path}?page=2 未 noindex — 分页页可能产生重复收录", "Duplicate -1.19")
+                          f"{path}?page=2 未 noindex — 分页页可能产生重复收录", "Duplicate Content -1.19")
             res["checks"]["archive"] = rec
             break
 
@@ -450,7 +450,7 @@ def audit_site(name, domain):
             res["checks"]["about_page"] = path
             break
     if not about_ok:
-        issue("medium", "brand", "未发现 About/联系页面", "Trust +2.01")
+        issue("medium", "brand", "未发现 About/联系页面")
 
     return res
 
