@@ -35,5 +35,5 @@ pnpm run seo:all -- --config seo-gate.config.json
 
 ## 文档
 
-- [上手](docs/合作方上手指南.md)
+- [上手](docs/上手指南.md)
 - [检查项](docs/检查项清单.md)
