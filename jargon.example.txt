@@ -1,0 +1,3 @@
+# 一行一个不该出现在公开页面上的词。
+# 使用：python3 scripts/audit.py sites.example.txt results jargon.example.txt
+# 不传这份词表时，只检查 localhost 和 127.0.0.1。
